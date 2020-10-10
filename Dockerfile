@@ -10,7 +10,8 @@ LABEL maintainer="Alexander Wolff <wolffaxn@gmail.com>" \
   org.label-schema.build-date=${BUILD_DATE}
 
 # dependencies
-RUN set -ex \
+RUN set -eux \
+  && DEBIAN_FRONTEND=noninteractive \
   && apt-get update \
   && apt-get install -y --no-install-recommends \
   gcc \
@@ -20,7 +21,7 @@ RUN set -ex \
   && apt-get clean
 
 # fpm
-RUN set -ex \
+RUN set -eux \
   && locale-gen en_US.UTF-8 \
   && gem install fpm -v ${FPM_VERSION}
 
