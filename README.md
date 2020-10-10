@@ -5,6 +5,32 @@
 
 > A Docker image to build packages such as rpms, debs and macos packages.
 
+## Build
+
+Run this command to build an image.
+
+```
+docker build --build-arg BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ') -t wolffaxn/docker-fpm .
+```
+
+To enable BuildKit build set the DOCKER_BUILDKIT=1 environment variable when invoking the docker build command,
+such as:
+
+```
+export DOCKER_BUILDKIT=1
+docker build --build-arg BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ') -t wolffaxn/docker-fpm .
+```
+
+## Run
+
+```
+❯ docker run --rm -it wolffaxn/docker-fpm
+Doing `require 'backports'` is deprecated and will not load any backport in the next major release.
+Require just the needed backports instead, or 'backports/latest'.
+1.11.0
+
+```
+
 ## License
 
 Released under the MIT License. See [license](LICENSE.md) for details.
