@@ -10,10 +10,10 @@ LABEL maintainer="Alexander Wolff <wolffaxn@gmail.com>" \
   org.label-schema.build-date=${BUILD_DATE}
 
 # dependencies
+ENV DEBIAN_FRONTEND=noninteractive
 RUN set -eux \
-  && DEBIAN_FRONTEND=noninteractive \
-  && apt-get update \
-  && apt-get install -y --no-install-recommends \
+  && apt-get update -qq \
+  && apt-get install -qq --no-install-recommends \
   gcc \
   locales \
   make \
