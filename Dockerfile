@@ -1,13 +1,18 @@
 FROM ruby:2.7-slim
 
 ARG BUILD_DATE
+ARG VCS_REF
+ARG VCS_URL
 
 ARG FPM_VERSION
 ENV FPM_VERSION=${FPM_VERSION:-1.11.0}
 
 # metadata
 LABEL maintainer="Alexander Wolff <wolffaxn@gmail.com>" \
-  org.label-schema.build-date=${BUILD_DATE}
+  org.label-schema.build-date=${BUILD_DATE} \
+  org.label-schema.docker.dockerfile="/Dockerfile" \
+  org.label-schema.vcs-ref=${VCS_REF} \
+  org.label-schema.vcs-url=${VCS_URL}
 
 # dependencies
 ENV DEBIAN_FRONTEND=noninteractive
