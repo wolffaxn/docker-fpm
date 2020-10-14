@@ -24,7 +24,7 @@ make
 ## Run
 
 ```
-❯ docker run --rm -it wolffaxn/docker-fpm
+❯ docker run --rm -it wolffaxn/docker-fpm:0.9.0
 Doing `require 'backports'` is deprecated and will not load any backport in the next major release.
 Require just the needed backports instead, or 'backports/latest'.
 1.11.0
