@@ -1,4 +1,4 @@
-FROM ruby:3.4-slim
+FROM ruby:3.4.4-slim
 
 ARG BUILD_DATE
 ARG VCS_REF
